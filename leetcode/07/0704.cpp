@@ -3,6 +3,7 @@
 /// title: binary-search
 /// url: https://leetcode.cn/problems/binary-search/
 /// tags: ["数组", "二分查找"]
+/// status: AC
 ///---
 
 #include "../preclude.h"

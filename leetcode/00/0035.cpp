@@ -3,6 +3,7 @@
 /// title: https://leetcode.cn/problems/search-insert-position/
 /// url: search-insert-position
 /// tags: ["数组", "二分查找"]
+/// status: AC
 ///---
 
 #include "../preclude.h"
