@@ -3,7 +3,7 @@
 /// title: design-linked-list
 /// url: https://leetcode.cn/problems/design-linked-list/
 /// tags: [链表]
-/// status: WA
+/// status: AC
 ///---
 
 #include "../preclude.h"
@@ -58,10 +58,24 @@ public:
       return;
     }
     auto i = ghost->succ;
-    for (int j = 0; i != ghost && j < index; ++j) {
+    int j = 0;
+    for (; i != ghost && j < index; ++j) {
       i = i->succ;
     }
-    if (i != nullptr) {
+    // if (i != /* nullptr */ ghost) {
+    //   auto node = new Node(val);
+    //   node->succ = i;
+    //   node->pred = i->pred;
+    //   i->pred = node;
+    //   node->pred->succ = node;
+    // } else if (i == ghost && j == index) {
+    //   auto node = new Node(val);
+    //   node->succ = i;
+    //   node->pred = i->pred;
+    //   i->pred = node;
+    //   node->pred->succ = node;
+    // }
+    if (i != ghost || j == index) {
       auto node = new Node(val);
       node->succ = i;
       node->pred = i->pred;
@@ -69,7 +83,6 @@ public:
       node->pred->succ = node;
     }
   }
-
   void deleteAtIndex(int index) {
     if (index < 0) {
       return;
@@ -78,9 +91,11 @@ public:
     for (int j = 0; i != ghost && j < index; j++) {
       i = i->succ;
     }
-    if (i != nullptr) {
+    if (i != /* nullptr */ ghost) {
       i->succ->pred = i->pred;
       i->pred->succ = i->succ;
+      // 回收内存
+      delete i;
     }
   }
 };
