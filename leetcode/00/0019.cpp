@@ -7,7 +7,7 @@
 ///---
 
 #include "../preclude.h"
-using ListNode = common::SingleListNode;
+using ListNode = option::ListNode<>;
 
 class Solution {
 public:

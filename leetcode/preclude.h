@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-namespace common {
-template <typename T = int> struct SingleListNode {
+namespace option {
+template <typename T = int> struct ListNode {
   T val;
-  SingleListNode *next;
-  SingleListNode() : val(0), next(nullptr) {}
-  SingleListNode(T x) : val(x), next(nullptr) {}
-  SingleListNode(T x, SingleListNode *next) : val(x), next(next) {}
+  ListNode *next;
+  ListNode() : val(0), next(nullptr) {}
+  ListNode(T x) : val(x), next(nullptr) {}
+  ListNode(T x, ListNode *next) : val(x), next(next) {}
 };
-} // namespace common
+} // namespace option
